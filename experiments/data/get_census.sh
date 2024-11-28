@@ -13,21 +13,31 @@ if [[ ! -f "census/census.csv" ]]; then
     mkdir -p census/
     wget -nv -O census/census.zip https://archive.ics.uci.edu/static/public/116/us+census+data+1990.zip
     unzip census/census.zip USCensus1990.data.txt
-    #mv USCensus1990.data.txt census/census.csv
-    echo "Using the first $num rows of the USCensus1990 dataset"
-    # Add 1 because of header
-    ((num++))
-    head -$num USCensus1990.data.txt > census/census.csv
-    ((num--))
-    rm USCensus1990.data.txt
-    rm census/census.zip
+
+    if (( num > 0 )); then
+        echo "Using the first $num rows of the USCensus1990 dataset"
+        # Add 1 because of header
+        ((num++))
+        head -$num USCensus1990.data.txt > census/census.csv
+        ((num--))
+        rm USCensus1990.data.txt
+        rm census/census.zip
+    else
+        echo "Using the complete dataset"
+        mv USCensus1990.data.txt census/census.csv
+    fi
+    #
+
 else
     echo "Census is already downloaded"
 fi
 
 if [[ ! -f "census/census.csv.mtd" ]]; then
-    #echo '{"format":csv,"header":true,"rows":2458285,"cols":69,"value_type":"int"}' > census/census.csv.mtd
-    echo "{\"format\":csv,\"header\":true,\"rows\":$num,\"cols\":69,\"value_type\":\"int\"}" > census/census.csv.mtd
+    if (( num > 0 )); then
+        echo "{\"format\":csv,\"header\":true,\"rows\":$num,\"cols\":69,\"value_type\":\"int\"}" > census/census.csv.mtd
+    else
+        echo '{"format":csv,"header":true,"rows":2458285,"cols":69,"value_type":"int"}' > census/census.csv.mtd
+    fi
 
 else
     echo "Already constructed metadata for census.csv"
