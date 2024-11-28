@@ -1,0 +1,1 @@
+export SYSTEMDS_STANDALONE_OPTS="-Xmx12g -Xms12g -Xmn1200m "
