@@ -19,6 +19,6 @@ code/algorithms/$x.dml \
 "results/algorithms/$x/$d/$y.csv" \
 "data/$folder/train_${d}_labels.data" \
 "data/$folder/test_${folder}.data" \
-"data/$folder/test_${folder}_labels.data"
+"data/$folder/test_${folder}_labels.data" \
 >>$fullLogname 2>&1
 # -explain \
