@@ -6,6 +6,7 @@ seed=3333
 d="census_enc_16k"
 y="ulab16"
 fullLogname="$logstart/$x/$d/$y-singlenode.log"
+mkdir -p "$(dirname "$fullLogname")"
 #perf stat -d -d -d \
 systemds \
 code/algorithms/$x.dml \
