@@ -1,5 +1,5 @@
 #/bin/bash
-num=500000
+num=0
 
 echo "Beginning download of Census"
 
