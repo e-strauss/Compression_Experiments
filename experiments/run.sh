@@ -1,5 +1,5 @@
 source parameters.sh
-logstart="results_algorithms/"
+logstart="results_algorithms"
 x='kmeans+'
 folder="census"
 seed=3333
