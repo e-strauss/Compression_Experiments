@@ -1,7 +1,8 @@
 #!/bin/bash
 
-export PATH="$SYSTEMDS_ROOT/bin:$PATH"
 export SYSTEMDS_ROOT="$HOME/github/systemds"
+export PATH="$SYSTEMDS_ROOT/bin:$PATH"
+
 
 # Get the hostname of the current machine
 HOSTNAME=$(hostname)
