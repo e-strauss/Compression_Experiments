@@ -4,7 +4,8 @@ x='kmeans+'
 folder="census"
 seed=3333
 d="census_enc"
-y="claWorkloadb1"
+#y="claWorkloadb1"
+y="cla16"
 fullLogname="$logstart/$x/$d/$y-singlenode.log"
 mkdir -p "$(dirname "$fullLogname")"
 #perf stat -d -d -d \
