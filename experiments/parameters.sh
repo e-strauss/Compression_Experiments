@@ -1,8 +1,10 @@
 #!/bin/bash
 
+export PATH="$SYSTEMDS_ROOT/bin:$PATH"
+export SYSTEMDS_ROOT="$HOME/github/systemds"
+
 # Get the hostname of the current machine
 HOSTNAME=$(hostname)
-
 # Set SYSTEMDS_STANDALONE_OPTS based on the hostname
 if [[ "$HOSTNAME" == "dams-so003" ]]; then
     export SYSTEMDS_STANDALONE_OPTS="-Xmx180g -Xms180g -Xmn18g"
