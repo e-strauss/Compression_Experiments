@@ -3,7 +3,7 @@ logstart="results_algorithms"
 x='kmeans+'
 folder="census"
 seed=3333
-d="census_enc_16k"
+d="census_enc"
 y="ulab16"
 fullLogname="$logstart/$x/$d/$y-singlenode.log"
 mkdir -p "$(dirname "$fullLogname")"

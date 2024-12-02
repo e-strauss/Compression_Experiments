@@ -1,5 +1,5 @@
 #/bin/bash
-num=0
+num=1000000
 
 echo "Beginning download of Census"
 
@@ -11,7 +11,9 @@ fi
 # Download file if not already downloaded.
 if [[ ! -f "census/census.csv" ]]; then
     mkdir -p census/
-    wget -nv -O census/census.zip https://archive.ics.uci.edu/static/public/116/us+census+data+1990.zip
+    if [[ ! -f "census/census.zip" ]]; then
+      wget -nv -O census/census.zip https://archive.ics.uci.edu/static/public/116/us+census+data+1990.zip
+    fi
     unzip census/census.zip USCensus1990.data.txt
 
     if (( num > 0 )); then
