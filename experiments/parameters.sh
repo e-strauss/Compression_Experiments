@@ -9,10 +9,7 @@ if [[ "$HOSTNAME" == "dams-so003" ]]; then
     echo "Node detected: Setting SYSTEMDS_STANDALONE_OPTS for node"
     export SYSTEMDS_ROOT="$HOME/github/systemds"
     export PATH="$SYSTEMDS_ROOT/bin:$PATH"
-elif [[ "$HOSTNAME" == "elias-ThinkPad-L15-Gen-3" ]]; then
-    export SYSTEMDS_STANDALONE_OPTS="-Xmx10g -Xms10g -Xmn1000m"
-    echo "Local detected: Setting SYSTEMDS_STANDALONE_OPTS for local"
-elif [[ "$HOSTNAME" == "Mac-mini.fritz.box" ]]; then
+elif [[ "$HOSTNAME" == "elias-ThinkPad-L15-Gen-3" || "$HOSTNAME" == "Mac-mini.fritz.box" || "$HOSTNAME" == "Mac-mini.local" ]]; then
     export SYSTEMDS_STANDALONE_OPTS="-Xmx10g -Xms10g -Xmn1000m"
     echo "Local detected: Setting SYSTEMDS_STANDALONE_OPTS for local"
 else
