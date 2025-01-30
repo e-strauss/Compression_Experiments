@@ -4,7 +4,7 @@
 # Get the hostname of the current machine
 HOSTNAME=$(hostname)
 # Set SYSTEMDS_STANDALONE_OPTS based on the hostname
-if [[ "$HOSTNAME" == "dams-so003" ]]; then
+if [[ "$HOSTNAME" == dams-so* ]]; then
     export SYSTEMDS_STANDALONE_OPTS="-Xmx180g -Xms180g -Xmn18g"
     echo "Node detected: Setting SYSTEMDS_STANDALONE_OPTS for node"
     export SYSTEMDS_ROOT="$HOME/github/systemds"
