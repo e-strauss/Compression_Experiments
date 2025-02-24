@@ -1,0 +1,120 @@
+25/02/18 12:38:48 INFO compress.CompressedMatrixBlockFactory: Original size       : 2460760
+25/02/18 12:38:48 INFO compress.CompressedMatrixBlockFactory: single col size     : 2460760
+25/02/18 12:38:48 DEBUG compress.CompressedMatrixBlockFactory: --compressed size:            2460760
+25/02/18 12:38:48 INFO compress.CompressedMatrixBlockFactory: original cost      : 9.41529203E11
+25/02/18 12:38:48 INFO compress.CompressedMatrixBlockFactory: single col cost    : 1.8609278731000095E12
+25/02/18 12:38:48 WARN compress.CompressedMatrixBlockFactory: Compression aborted at phase: 1
+25/02/18 12:38:48 INFO cp.CompressionCPInstruction: Compression output class: CompressedMatrixBlock
+25/02/18 12:38:48 DEBUG lib.CLALibBinaryCellOp: Double Compressed BinaryOp
+25/02/18 12:38:48 WARN colgroup.ColGroupIO:  duplicate dicts on exact Size on Disk : 0
+Run 1, Iteration 28:  Terminated with code = 2,  Centroid WCSS = 7.052844700072354E8
+25/02/18 12:38:48 WARN compress.CompressedMatrixBlock: Decompressing because: In-place matrix copy into indexed matrix
+Number of successful runs = 0
+Number of incomplete runs = 1
+Number of failed runs (with lost centroids) = 0
+K-means: No output is produced. Try increasing the number of iterations and/or lower eps.
+0.0
+SystemDS Statistics:
+Total elapsed time:		23.965 sec.
+Total compilation time:		1.026 sec.
+Total execution time:		22.939 sec.
+Cache hits (Mem/Li/WB/FS/HDFS):	1373/0/0/0/1.
+Cache writes (Li/WB/FS/HDFS):	1/288/0/0.
+Cache times (ACQr/m, RLS, EXP):	1.588/0.007/0.026/0.000 sec.
+HOP DAGs recompiled (PRED, SB):	0/18.
+HOP DAGs recompile time:	0.072 sec.
+Functions recompiled:		1.
+Functions recompile time:	0.038 sec.
+CLA Compression Phases :	0.467/1.846/1.532/1.568/0.002/0.000
+Decompression with allocation (Single, Multi, Spark, Cache) : 0/1/0/0
+Decompression with allocation Time (Single , Multi)         : 0.000/0.001 sec.
+Decompression to block (Single, Multi)                      : 134508/0
+Decompression to block Time (Single, Multi)                 : 64.120/0.000 sec.
+Total JIT compile time:		10.135 sec.
+Total JVM GC count:		2.
+Total JVM GC time:		1.573 sec.
+Heavy hitter instructions:
+  #  Instruction   Time(s)  Count
+  1  m_kmeans       15.891      1
+  2  compress        7.055     45
+  3  <=              5.358     56
+  4  uarmin          4.657     28
+  5  ba+*            4.296    105
+  6  r'              0.986    112
+  7  *               0.115    115
+  8  uack+           0.040     28
+  9  uasqk+          0.038     44
+ 10  uak+            0.038     56
+ 11  uark+           0.027     45
+ 12  /               0.027     88
+ 13  uarsqk+         0.026     29
+ 14  uacsqk+         0.025      1
+ 15  +               0.021    365
+ 16  rand            0.015     22
+ 17  uacmean         0.012      1
+ 18  rmvar           0.011   1168
+ 19  createvar       0.010    914
+ 20  -               0.009     63
+ 21  sqrt            0.008      2
+ 22  ucumk+          0.005     17
+ 23  ctable          0.005      1
+ 24  +*              0.005     33
+ 25  ctableexpand    0.005      1
+ 26  print           0.004     39
+ 27  leftIndex       0.003      4
+ 28  min             0.003     16
+ 29  replace         0.003      3
+ 30  rexpand         0.003     33
+ 31  <               0.003     45
+ 32  mvvar           0.002    335
+ 33  -*              0.002     16
+ 34  seq             0.002     34
+ 35  rlit            0.001     16
+ 36  rightIndex      0.001     21
+ 37  cpvar           0.001    161
+ 38  ifelse          0.001     16
+ 39  castdts         0.001     33
+ 40  castdtm         0.001     16
+ 41  ==              0.001     74
+ 42  round           0.000      3
+ 43  assignvar       0.000     66
+ 44  log             0.000      2
+ 45  >               0.000     28
+ 46  >=              0.000     28
+ 47  castvti         0.000      4
+ 48  ncol            0.000      2
+
+25/02/18 12:38:48 INFO api.DMLScript: END DML run 02/18/2025 12:38:48
+
+ Performance counter stats for 'systemds code/algorithms/kmeans+.dml -config code/conf/claWorkloadInter.xml -stats 100 -debug -exec singlenode -seed 3333 -args data/census/train_census_enc.data 1 results/algorithms/kmeans+/census_enc/claWorkloadInter.csv data/census/train_census_enc_labels.data data/census/test_census.data data/census/test_census_labels.data':
+
+        175.663,62 msec task-clock                #    6,931 CPUs utilized          
+            64.600      context-switches          #  367,748 /sec                   
+             3.563      cpu-migrations            #   20,283 /sec                   
+         4.986.176      page-faults               #   28,385 K/sec                  
+   433.180.363.482      cycles                    #    2,466 GHz                      (40,04%)
+       796.907.921      stalled-cycles-frontend   #    0,18% frontend cycles idle     (40,07%)
+    11.111.520.288      stalled-cycles-backend    #    2,57% backend cycles idle      (40,08%)
+   710.206.148.660      instructions              #    1,64  insn per cycle         
+                                                  #    0,02  stalled cycles per insn  (40,11%)
+   115.803.577.281      branches                  #  659,235 M/sec                    (40,11%)
+     1.995.760.699      branch-misses             #    1,72% of all branches          (40,16%)
+   291.587.880.399      L1-dcache-loads           #    1,660 G/sec                    (40,18%)
+    12.354.160.636      L1-dcache-load-misses     #    4,24% of all L1-dcache accesses  (40,15%)
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+    13.049.037.705      L1-icache-loads           #   74,284 M/sec                    (40,14%)
+        42.826.043      L1-icache-load-misses     #    0,33% of all L1-icache accesses  (40,14%)
+     1.803.206.595      dTLB-loads                #   10,265 M/sec                    (40,12%)
+        65.126.734      dTLB-load-misses          #    3,61% of all dTLB cache accesses  (40,09%)
+        64.846.248      iTLB-loads                #  369,150 K/sec                    (40,03%)
+        32.134.225      iTLB-load-misses          #   49,55% of all iTLB cache accesses  (40,05%)
+     7.521.865.294      L1-dcache-prefetches      #   42,820 M/sec                    (40,02%)
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      25,343252230 seconds time elapsed
+
+     155,937019000 seconds user
+      19,682795000 seconds sys
+
+
