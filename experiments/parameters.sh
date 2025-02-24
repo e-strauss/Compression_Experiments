@@ -18,3 +18,5 @@ elif [[ "$HOSTNAME" == "Mac-mini.fritz.box" || "$HOSTNAME" == "Mac-mini.local" ]
 else
     echo "Hostname $HOSTNAME not recognized. Please configure SYSTEMDS_STANDALONE_OPTS manually."
 fi
+
+export LOG4JPROP='code/conf/log4j-compression.properties'

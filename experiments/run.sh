@@ -5,6 +5,7 @@ folder="census"
 seed=3333
 d="census_enc"
 y="claWorkloadb1"
+#y="claWorkloadInter"
 #y="cla16"
 #y="ula.xml"
 fullLogname="$logstart/$x/$d/$y-singlenode.log"

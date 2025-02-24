@@ -1,6 +1,7 @@
 <root>
     <sysds.compressed.linalg>WORKLOAD</sysds.compressed.linalg>
-    <sysds.compressed.linalg.intermediate>false</sysds.compressed.linalg.intermediate>
+    <sysds.compressed.linalg.intermediate>true</sysds.compressed.linalg.intermediate>
+    <sysds.compressed.decompressblen.size>16384</sysds.compressed.decompressblen.size>
     <sysds.cp.parallel.ops>true</sysds.cp.parallel.ops>
     <sysds.cp.parallel.io>true</sysds.cp.parallel.io>
     <sysds.compressed.overlapping>true</sysds.compressed.overlapping>
