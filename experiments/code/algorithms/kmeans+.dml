@@ -1,5 +1,5 @@
 data = read($1)
+print(nrow(data))
 [data, Centering, ScaleFactor] = scale(data, TRUE, TRUE)
-print(ncol(data))
-#[Y_n, C_n] = kmeans(X=data, k=16, runs= 1, max_iter=28, eps= 1e-17, seed= 13, is_verbose=TRUE)
+[Y_n, C_n] = kmeans(X=data, k=16, runs= 1, max_iter=28, eps= 1e-17, seed= 13, is_verbose=TRUE)
 #print(sum(Y_n))
